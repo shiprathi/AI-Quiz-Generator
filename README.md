@@ -65,7 +65,7 @@ README.md
 
 ## 1. Clone the Repository
 
-git clone <[your-repo-link](https://github.com/shiprathi/AI-Quiz-Generator.git)>  
+git clone <(https://github.com/shiprathi/AI-Quiz-Generator.git)>  
 cd peblo_quiz_engine
 
 ---
