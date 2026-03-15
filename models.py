@@ -16,7 +16,7 @@ class Question(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     question = Column(Text)
-    question_type = Column(String)   # MCQ / True-False / Fill in the blank
+    question_type = Column(String)  
     options = Column(Text)
     answer = Column(String)
     difficulty = Column(String)
