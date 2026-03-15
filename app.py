@@ -1,13 +1,12 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-
 from .database import engine, SessionLocal
 from . import models
 from .models import ContentChunk, Question, StudentAnswer
 from .pdf_ingestion import extract_text_from_pdf, chunk_text
 from .quiz_generator import parse_questions
-# create database tables
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -36,7 +35,6 @@ async def ingest_pdf(file: UploadFile = File(...)):
 
     db = SessionLocal()
 
-    # optional: clear old chunks/questions for fresh run
     db.query(Question).delete()
     db.query(ContentChunk).delete()
     db.commit()
